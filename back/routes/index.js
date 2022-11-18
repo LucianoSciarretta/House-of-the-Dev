@@ -7,5 +7,4 @@ const authAPI = require("./auth");
 router.use("/auth", authAPI);
 
 router.use("/users", userRoutes)
-
 module.exports = router;

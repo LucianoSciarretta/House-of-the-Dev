@@ -3,11 +3,9 @@ const router = express.Router();
 const User = require("../models/users");
 const bcrypt = require("bcrypt");
 const { generateToken, validateToken } = require("../config/token");
-const cookieParser = require("cookie-parser")
 
 router.post("/register", (req, res) => {
   const user = req.body;
-  console.log("USER:", user);
   User.create(user)
     .then((newUser) => res.status(201).send(newUser))
     .catch((error) =>
@@ -30,10 +28,15 @@ router.post("/login", (req, res) => {
       };
       const token = generateToken(payload);
 
-      res.cookie("token", token)
-      res.send(payload)
+      res.cookie("token", token);
+      res.send({message: "Te logueaste correctamente" ,data:payload});
     });
   });
+});
+
+router.post("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.sendStatus(204);
 });
 
 module.exports = router;

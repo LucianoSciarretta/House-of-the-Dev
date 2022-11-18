@@ -15,7 +15,7 @@ app.use(morgan("tiny"));
 
 app.use("/api", routes);
 
-const PORT = 3000;
+const PORT = 3001;
 
 db.sync({ force: false }).then(() => {
   console.log("DB CONNECTED");

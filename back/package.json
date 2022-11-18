@@ -4,8 +4,9 @@
   "description": "House of the Dev",
   "main": "server.js",
   "scripts": {
-    "start": " nodemon BACKEND/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon back/server.js",
+    "server": "nodemon back/server.js"
+  
   },
   "repository": {
     "type": "git",
@@ -21,14 +22,19 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "bcrypt": "^5.1.0",
+    "concurrently": "^7.5.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "jwtoken": "^0.0.0",
     "morgan": "^1.10.0",
     "pg": "^8.8.0",
     "sequelize": "^6.25.6"
+    
   }
+  
 }
