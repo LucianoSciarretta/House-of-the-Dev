@@ -20,6 +20,6 @@ const PORT = 3001;
 db.sync({ force: false }).then(() => {
   console.log("DB CONNECTED");
   app.listen(PORT, () => {
-    console.log(" Server listen at port 3000");
+    console.log("Server listen at port 3001");
   });
 });

@@ -27,6 +27,8 @@ User.init(
     },
     email: {
       type: S.STRING,
+      allowNull:false,
+      unique: true
     },
     lastName: {
       type: S.STRING,

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/users");
-const bcrypt = require("bcrypt");
 const { generateToken, validateToken } = require("../config/token");
+const { validateAuth } = require("../middlewares/authentication");
 
 router.post("/register", (req, res) => {
   const user = req.body;
@@ -33,6 +33,23 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+
+//valida el token
+router.get("/secret",validateAuth, (req, res) => {
+
+  res.send(req.user)
+
+})
+
+
+router.get("/me", validateAuth, (req, res) => {
+
+  res.send(req.user)
+})
+
+
+
 
 router.post("/logout", (req, res) => {
   res.clearCookie("token");

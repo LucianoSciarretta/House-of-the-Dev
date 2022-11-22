@@ -1,9 +1,11 @@
 # House-of-the-Dev
 
-Tecnologías:
+
   
   Schema Design:  https://dbdiagram.io/d/6373c822c9abfc611172dffe
 
+ 
+  Tecnologías
 
   Back End: Sequelize, Express, JWT, Postgres.
 
