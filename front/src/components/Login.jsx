@@ -22,15 +22,18 @@ function Login() {
     axios
       .post("http://localhost:3001/api/auth/login", { email, password })
       .then((res) => {
-       
-      });
+        console.log(res.data);
+        // res.data;
+        navigate("/home")
+      })
+      .catch(() => console.error("Ocurrió un problema"))
   };
 
   return (
     <div>
       <div className="login">
         <h1>Login</h1>
-        <form  className="form" onSubmit={""}>
+        <form className="form" onSubmit={handleSubmit}>
           <div>
             <input
               type="text"
@@ -48,7 +51,7 @@ function Login() {
             />
           </div>
           <div>
-          <button type="submit">Iniciar sesión</button>
+            <button type="submit">Iniciar sesión</button>
           </div>
         </form>
       </div>

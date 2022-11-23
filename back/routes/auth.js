@@ -27,24 +27,24 @@ router.post("/login", (req, res) => {
         email: user.email,
       };
       const token = generateToken(payload);
-
+      console.log("TOKEN LOGIN:", token)
       res.cookie("token", token);
-      res.send({message: "Te logueaste correctamente" ,data:payload});
+      res.send({message: "Te logueaste correctamente", data:payload});
     });
   });
 });
 
 
 //valida el token
-router.get("/secret",validateAuth, (req, res) => {
+// router.get("/secret",validateAuth, (req, res) => {
 
-  res.send(req.user)
+//   res.send(req.user)
 
-})
+// })
 
 
 router.get("/me", validateAuth, (req, res) => {
-
+  console.log(req.user)
   res.send(req.user)
 })
 
