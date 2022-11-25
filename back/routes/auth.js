@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/users");
 const { generateToken, validateToken } = require("../config/token");
-const { validateAuth } = require("../middlewares/authentication");
+const { validateAuth } = require("../middlewares/auth");
 
 router.post("/register", (req, res) => {
   const user = req.body;
@@ -25,31 +25,26 @@ router.post("/login", (req, res) => {
         name: user.name,
         lastName: user.lastName,
         email: user.email,
+        isAdmin: user.isAdmin,
       };
       const token = generateToken(payload);
-      console.log("TOKEN LOGIN:", token)
+      console.log("TOKEN LOGIN:", token);
       res.cookie("token", token);
-      res.send({message: "Te logueaste correctamente", data:payload});
+      res.send(payload);
     });
   });
 });
 
-
 //valida el token
-// router.get("/secret",validateAuth, (req, res) => {
+router.get("/secret", validateAuth, (req, res) => {
+  console.log(req.user);
+  res.send(req.user);
+});
 
-//   res.send(req.user)
-
-// })
-
-
-router.get("/me", validateAuth, (req, res) => {
-  console.log(req.user)
-  res.send(req.user)
-})
-
-
-
+router.get("/me", validateAuth,(req, res)  => {
+  console.log(req.user);
+  res.send(req.user);
+});
 
 router.post("/logout", (req, res) => {
   res.clearCookie("token");

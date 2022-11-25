@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../state/userContext";
 import styles from "../componentsStyles/Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user, setUser } = useAuthContext();
   const navigate = useNavigate();
 
   const handleEmail = (event) => {
@@ -20,15 +22,23 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3001/api/auth/login", { email, password })
+      .post(
+        "http://localhost:3001/api/auth/login",
+        { email, password },
+        { withCredentials: true, credentials: "include" }
+      )
       .then((res) => {
-        console.log(res.data);
-        // res.data;
-        navigate("/home")
-      })
-      .catch(() => console.error("Ocurrió un problema"))
+        // console.log("RES login:", res.data);
+        //Al usuario del estado global le seteo el payload(name, lastName, email, isAdmin)
+        // console.log("USER LOGIN VACÍO", user);
+        setUser(res.data);
+      }).then(() => navigate("/"))
+      .catch(() => alert("Ocurrió un problema en su inicio de sesión"));
+      // console.log("USER CON DATA", user);
   };
-
+  //Después que se cumple la promesa el seter del contexto global cambia el estado de user
+  // navigate("/");
+  
   return (
     <div>
       <div className="login">

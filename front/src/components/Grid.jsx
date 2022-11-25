@@ -5,7 +5,7 @@ import fakeData from "../utils/fakeData"
 
 function Grid() {
   return (
-    <ul style={{ listStyle: "none"}} className="gridColumns">
+    <ul  className="gridColumns">
       
     {fakeData.map((house, i) => {
     

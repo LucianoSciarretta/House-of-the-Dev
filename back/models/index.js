@@ -1,10 +1,8 @@
-const User = require("./users")
-const Favorite = require("./favorite")
-const Property = require("./property")
-const { belongsTo } = require("./users")
+const User = require("./users");
+const Property = require("./property");
 
+Property.belongsToMany(User, {through: "favorites_properties" ,as:"favorites"})
+User.belongsToMany(Property, {through: "favorites_properties" ,as:"favorites"})
 
-Favorite.belongsTo(User)
-User.hasMany(Favorite)
-Favorite.belongsTo(Property)
-Property.hasMany(Favorite)
+module.exports = { User, Property };
+
