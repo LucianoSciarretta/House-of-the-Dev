@@ -36,10 +36,7 @@ router.post("/login", (req, res) => {
 });
 
 //valida el token
-router.get("/secret", validateAuth, (req, res) => {
-  console.log(req.user);
-  res.send(req.user);
-});
+
 
 router.get("/me", validateAuth,(req, res)  => {
   console.log(req.user);

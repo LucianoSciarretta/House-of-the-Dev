@@ -1,48 +1,34 @@
-import React from 'react'
-import HouseCardStyles from "../componentsStyles/HouseCardStyles.css"
-import { useAuthContext } from '../state/userContext'
+import React from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import HouseCardStyles from "../componentsStyles/HouseCardStyles.css";
+import { useHouseContext } from "../state/houseContext";
 
-
-
-
-
-
-const  HouseCard =({house}) => {
-
-const {user, setUser} = useAuthContext()
-
+const HouseCard = ({ house }) => {
+  const { eachHouse, setEachHouse } = useHouseContext();
 
   return (
-    <div>
-        <img src="https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg" alt="casa..." />
-        <div>
-            <h5>{house.price}</h5>
-        </div>
-        <div>
-            <h5>{house.propertyType}</h5>
-        </div>
-        <div>
-            <h5>{house.rooms}</h5>
-        </div>
-        <div>
-            <h5>{house.country}</h5>
-        </div>
-        <div>
-            <h5>{house.location}</h5>
-        </div>
-        <div>
-            <h5>{house.neighborhood}</h5>
-        </div>
-        <div>
-            <h5>{house.adress}</h5>
-        </div>
-        <div>
-            <h5>{house.image}</h5>
-        </div>
+    <div className="HouseCard-Container">
+      <div>
+        <img
+          src="https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg"
+          alt="casa..."
+        />
 
+        <div>
+          <h5>{house.price}</h5>
+        </div>
+        <div>
+          <Link to="details">
+            <button onClick={() => setEachHouse(house)}>
+              Detalles de la propiedad
+            </button>
+          </Link>
+        </div>
+        
+      </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default HouseCard
+export default HouseCard;

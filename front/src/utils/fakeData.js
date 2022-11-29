@@ -1,6 +1,6 @@
 let casas = [
   {
-    price: "300000$",
+    price: "500440$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -11,7 +11,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "60002$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -22,7 +22,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "100500$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -33,7 +33,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "9400020$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -44,7 +44,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "338400$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -55,7 +55,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "209370$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -66,7 +66,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "302810$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -77,7 +77,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "902609$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -89,7 +89,7 @@ let casas = [
   },
 
   {
-    price: "300000$",
+    price: "328000$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -100,7 +100,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
   {
-    price: "300000$",
+    price: "392700$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -111,7 +111,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
    {
-    price: "300000$",
+    price: "329620$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -122,7 +122,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
    {
-    price: "300000$",
+    price: "600073$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",
@@ -133,7 +133,7 @@ let casas = [
       "https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg",
   },
    {
-    price: "300000$",
+    price: "800270$",
     propertyType: "casa",
     rooms: 4,
     country: "argentina",

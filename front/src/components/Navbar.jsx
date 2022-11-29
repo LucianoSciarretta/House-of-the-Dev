@@ -8,8 +8,10 @@ import { useEffect } from "react";
 function Navbar() {
   const navigate = useNavigate();
   const { user, setUser } = useAuthContext();
-  // console.log("NAVBAR", user)
+  console.log("NAVBAR", user)
   useEffect(() => {
+    
+    if(!user.email) return
     axios
       .get("http://localhost:3001/api/auth/me", {
         withCredentials: true,
@@ -21,6 +23,7 @@ function Navbar() {
         setUser(user);
       })
       .catch(() => alert("Algo salió mal en el /ME"));
+    
   }, []);
 
   const handleLogout = (event) => {

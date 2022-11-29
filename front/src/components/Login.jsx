@@ -54,7 +54,7 @@ function Login() {
           </div>
           <div>
             <input
-              type="text"
+              type="password"
               placeholder="password"
               onChange={handlePassword}
               value={password}

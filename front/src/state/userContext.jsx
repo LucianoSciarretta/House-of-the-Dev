@@ -6,7 +6,7 @@ import React, { createContext, useContext, useState } from "react";
 
  export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(default_value);
-
+  
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       {children}
