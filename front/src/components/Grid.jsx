@@ -6,7 +6,7 @@ import fakeData from "../utils/fakeData";
 
 function Grid() {
   return (
-    // width: 100%
+    // width: 100%q
     <div className="grid-container">  
       <div>
         <ul className="gridColumns">

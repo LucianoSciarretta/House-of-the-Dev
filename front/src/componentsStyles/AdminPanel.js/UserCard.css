@@ -1,16 +1,16 @@
-.details-container {
+.userCard-container {
+    font-size: 2em;
     padding:10px;
     background-color: rgba(209, 105, 53, 0.568);
     color:white;
-    width :50%;
+    width :70%;
     margin: 10px auto;
     height: auto;
     border-radius: 15px;
 }
 
-.container-favorites {
+.container-buttons{
     display: flex;
     flex-direction: row;
-    justify-content: end;
-    
+    justify-content: space-evenly;
 }

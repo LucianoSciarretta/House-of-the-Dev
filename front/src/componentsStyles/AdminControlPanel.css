@@ -1,0 +1,24 @@
+.dropdown-container {
+  position: relative;
+ 
+
+}
+
+.dropdown-container ul {
+    border-radius: 7px;
+    background-color: rgb(161, 103, 80);
+    position:absolute;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.9s;
+}
+
+.dropdown-container:hover ul {
+    color:white;
+    max-height: 500px;
+}
+
+li {
+    padding: 5px;
+    margin: 20px;
+}

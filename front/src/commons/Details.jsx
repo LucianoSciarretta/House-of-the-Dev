@@ -1,10 +1,27 @@
 import React from "react";
 import { useHouseContext } from "../state/houseContext";
 import styles from "../componentsStyles/Details.css";
+import axios  from "axios"
+import {useAuthContext} from "../state/userContext"
+
 
 function Details() {
   const { eachHouse } = useHouseContext();
-  console.log("HouseContext", eachHouse);
+  
+  const { user } = useAuthContext();
+
+  
+   const handleDelete = () => {
+    axios.delete("http://localhost:3001/api/admin/house/:id",{},    {
+      withCredentials: true,
+      credentials: "include",
+    }).then(() => alert("Propiedad eliminada correctamente"))
+    .catch((error) => alert("No se pudo eliminar la propiedad"))
+   }
+
+
+
+
   return (
     <div className="details-container">
       <div>
@@ -35,9 +52,14 @@ function Details() {
       <div>
         <h5>Dirección:  {eachHouse.adress}</h5>
       </div>
-      <div className="container-button">
+      <div className="container-favorites">
         <button>Añadir a favoritos</button>
       </div>
+      { user.isAdmin &&
+      <div className="container-delete">
+        <button onClick={handleDelete} >Eliminar Propiedad</button>
+      </div>
+      }
     </div>
   );
 }

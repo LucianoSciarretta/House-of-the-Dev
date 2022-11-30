@@ -4,10 +4,10 @@ const { validateToken } = require("../config/token");
 const validateRolAdmin = require("../middlewares/validateRolAdmin");
 const { User, Property } = require("../models");
 
-//Ruta para mostrar todos los usuarios registrados que no son admin
+//Ruta para mostrar todos los usuarios registrados 
 router.get("/", (req, res) => {
   const token = req.cookies.token;
-  console.log("TOKEN:", token);
+  console.log("TOKEN:::", token);
 
   if (!token) return res.status(401).send("Ocurrió un problema");
   if (!validateRolAdmin(token)) {
@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 
 //Ruta para borrar un usuario
 router.delete("/:id", (req, res) => {
-  const id = req.params.id;
+  const id = req.params.id
   const token = req.cookies.token;
 
   if (!token) return res.status(401).send("Ocurrió un problema");
@@ -42,7 +42,7 @@ router.delete("/:id", (req, res) => {
 //Ruta para promover administradores
 router.put("/:id", (req, res) => {
   const token = req.cookies.token;
-  const { id } = req.params;
+  const id  = req.params.id;
   console.log(id);
 
   if (!token) return res.sendStatus(401);
@@ -69,7 +69,7 @@ router.post("/house", (req, res) => {
 
 router.delete("/house/:id", (req, res) => {
   const token = req.cookies.token;
-  const id = 1;
+  const id = 4;
   Property.destroy({ where: { id } })
     .then(() =>
       res.status(200).send("Propiedad eliminada correctamente")
