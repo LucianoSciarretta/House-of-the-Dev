@@ -6,20 +6,19 @@ import { useHouseContext } from "../state/houseContext";
 
 const HouseCard = ({ house }) => {
   const { eachHouse, setEachHouse } = useHouseContext();
-
   return (
     <div className="HouseCard-Container">
       <div>
         <img
-          src="https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg"
+          src={house.image}
           alt="casa..."
         />
 
         <div>
-          <h5>{house.price}</h5>
+          <h5>Precio: {house.price}</h5>
         </div>
         <div>
-          <Link to="details">
+          <Link to="/details">
             <button onClick={() => setEachHouse(house)}>
               Detalles de la propiedad
             </button>

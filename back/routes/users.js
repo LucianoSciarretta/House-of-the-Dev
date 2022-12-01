@@ -4,18 +4,21 @@ const { User, Property } = require("../models");
 
 //favoritos
 router.post("/favorites", (req, res) => {
-  Property.create({
-    price: 300000,
-    propertyType: "casa",
-    rooms: 3,
-    country: "argentina",
-    location: "buenos aires",
-    neighborhood: "caballito",
-    adress: "av diaz velez 5508",
-    image: "foto",
+  const { email, property } = req.body;
+  Property.findOne({
+    where: { id: property.id },
+    // price: property.price,
+    // propertyType: property.propertyType,
+    // rooms: property.rooms,
+    // country: property.country,
+    // location: property.location,
+    // neighborhood: property.neighborhood,
+    // adress: property.adress,
+    // image: property.image,
   }).then((property) => {
-    User.findOne({ where: { id: 1 } })
+    User.findOne({ where: { email: email } })
       .then((user) => {
+        console.log("USER:::", user);
         user.addFavorites(property);
         res.sendStatus(200);
       })
@@ -25,9 +28,10 @@ router.post("/favorites", (req, res) => {
   });
 });
 
-// Ver un favorito
-router.get("/favorites", (req, res) => {
-  User.findOne({ where: { id: 1 }, include: "favorites" })
+// Ver favoritos
+router.get("/favorites/:email", (req, res) => {
+  const email = req.params.email
+  User.findOne({ where: { email }, include: "favorites" })
     .then((user) => res.send(user.favorites))
     .catch((error) => res.send(" Error en la petición"));
 });

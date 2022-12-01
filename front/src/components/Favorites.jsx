@@ -1,17 +1,30 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import HouseCard from "../commons/HouseCard";
+import { useFavoritesContext } from "../state/FavoritesContext";
 import { useAuthContext } from "../state/userContext";
-
+import styles from "../componentsStyles/Favorites.css";
 const Favorites = () => {
   const { user, setUser } = useAuthContext();
-  const [favorites, setFavorites] = useState([]);
+  const { favoritesProperties } = useFavoritesContext();
 
-
-
-
-  
-
-  return <div>Favorites</div>;
+  return (
+    <div>
+      <div className="favorite-container">
+        <div>
+          <div className="favoritos-div">
+          </div>
+           <h2>Favoritos</h2>
+          <ul className="favorite-columns">
+            {favoritesProperties.map((house, i) => (
+              <HouseCard house={house} key={i} />
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Favorites;

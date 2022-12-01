@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import Details from "./commons/Details";
-import CreateProperty from "./components/AdminRoutes.js/CreateProperty";
-import UsersGrid from "./components/AdminRoutes.js/UsersGrid";
+import CreateProperty from "./components/Admin.js/CreateProperty";
+import UsersGrid from "./components/Admin.js/UsersGrid";
+import Favorites from "./components/Favorites";
 import Grid from "./components/Grid";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
+import Search from "./components/Search";
 import Secret from "./components/Secret";
 import Sidebar from "./components/Sidebar";
 import styles from "./index.css";
@@ -23,9 +25,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/secret" element={<Secret />} />
           <Route path="/details" element={<Details />} />
-          <Route path="/create-property"  element={<CreateProperty />} />
-          <Route path="delete-user"  element={<UsersGrid />}/>
-          <Route path="show-users"  element={<UsersGrid />} />
+          <Route path="/create-property" element={<CreateProperty />} />
+          <Route path="/delete-user" element={<UsersGrid />} />
+          <Route path="/show-users" element={<UsersGrid />} />
+          <Route path="Search-Component" element={<Search />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/" element={<Grid />} />
         </Routes>
       </div>

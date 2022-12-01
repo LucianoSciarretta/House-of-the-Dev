@@ -2,13 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import UserCard from "../../commons/UserCard";
-import styles from "../../componentsStyles/AdminPanel.js/UsersGrid.css"
+import styles from "../../componentsStyles/UsersGrid.css"
 
 function UsersGrid() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    console.log("USERS-grid:::", users);
+    // console.log("USERS-grid:::", users);
     axios
       .get(
         "http://localhost:3001/api/admin",
@@ -19,7 +19,7 @@ function UsersGrid() {
         }
       )
       .then((res) => {
-        console.log("RES.DATA", res.data);
+        // console.log("RES.DATA", res.data);
         setUsers(res.data);
       })
       .catch(() =>

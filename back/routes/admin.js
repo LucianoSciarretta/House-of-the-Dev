@@ -69,7 +69,7 @@ router.post("/house", (req, res) => {
 
 router.delete("/house/:id", (req, res) => {
   const token = req.cookies.token;
-  const id = 4;
+  const id = req.params.id;
   Property.destroy({ where: { id } })
     .then(() =>
       res.status(200).send("Propiedad eliminada correctamente")

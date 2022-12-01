@@ -5,11 +5,14 @@ import { useAuthContext } from "../state/userContext";
 import styles from "../componentsStyles/Navbar.css";
 import { useEffect } from "react";
 import AdminControlPanel from "./AdminControlPanel";
+import { useFavoritesContext } from "../state/FavoritesContext";
 
 function Navbar() {
   const navigate = useNavigate();
   const { user, setUser } = useAuthContext();
+  const { favoritesProperties, setFavoritesProperties } = useFavoritesContext();
   // console.log("NAVBAR", user);
+
   useEffect(() => {
     axios
       .get("http://localhost:3001/api/auth/me", {
@@ -22,8 +25,26 @@ function Navbar() {
 
         setUser(user);
       })
-      .catch(() => alert("Algo salió mal en el /ME"));
+      .catch(() => console.error("Algo salió mal en el /ME"));
   }, []);
+
+  const handleFavorites = (e) => {
+    e.preventDefault();
+
+    axios
+      .get(`http://localhost:3001/api/users/favorites/${user.email}`, {
+        withCredentials: true,
+        credentials: "include",
+      })
+      .then((res) => {
+        console.log("RES.DATA:::", res.data);
+        setFavoritesProperties(res.data);
+        navigate("/favorites");
+      })
+      .catch((error) => console.error("Algo salió mal"));
+  };
+
+  //  console.log("PROPIEDADES FAVORITAS",favoritesProperties)
 
   const handleLogout = (event) => {
     // console.log("evento:", event)
@@ -39,7 +60,7 @@ function Navbar() {
       )
       .then(() => {
         setUser({});
-        alert("Tu sesión ha terminado");
+        console.log("Tu sesión ha terminado");
         navigate("/");
       })
 
@@ -73,6 +94,7 @@ function Navbar() {
             )}
           </div>
         )}
+        {user.email && <button onClick={handleFavorites}>Favoritos</button>}
         <Link to="/">
           <button>Página principal</button>
         </Link>
@@ -82,3 +104,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+

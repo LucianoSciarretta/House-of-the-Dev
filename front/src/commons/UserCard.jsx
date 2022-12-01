@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "../componentsStyles/AdminPanel.js/UserCard.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const UserCard = ({ user }) => {
   // console.log("UserCard", user);
-
+  const navigate = useNavigate()
   const handleDeleteUser = () => {
     axios
       .delete(`http://localhost:3001/api/admin/${user.id}`, {
@@ -21,7 +22,10 @@ const UserCard = ({ user }) => {
         withCredentials: true,
         credentials: "include",
       })
-      .then(() => alert("El usuario ahora tiene permisos de administrador "))
+      .then(() => {
+        alert("El usuario ahora tiene permisos de administrador ")
+        navigate("/show-users")
+      })
       .catch(() => alert("No se pudo cambiar el rol del usuario"))
   };
 
