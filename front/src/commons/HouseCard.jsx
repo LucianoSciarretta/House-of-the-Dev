@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import HouseCardStyles from "../componentsStyles/HouseCardStyles.css";
 import { useHouseContext } from "../state/houseContext";
+import { useAuthContext } from "../state/userContext";
 
 const HouseCard = ({ house }) => {
+  const {user} = useAuthContext()
   const { eachHouse, setEachHouse } = useHouseContext();
   return (
     <div className="HouseCard-Container">
@@ -20,7 +22,8 @@ const HouseCard = ({ house }) => {
         <div>
           <Link to="/details">
             <button onClick={() => setEachHouse(house)}>
-              Detalles de la propiedad
+              {user.isAdmin ? "Detalles de la propiedad y opciones de edición" : "Detalles de la propiedad"}
+              
             </button>
           </Link>
         </div>

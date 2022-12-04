@@ -1,8 +1,10 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "../../componentsStyles/AdminPanel.js/CreateProperty.css";
+import { useHouseContext } from "../../state/houseContext";
+import { useAuthContext } from "../../state/userContext";
 
 function CreateProperty() {
   const [price, setPrice] = useState();
@@ -14,8 +16,14 @@ function CreateProperty() {
   const [adress, setAdress] = useState("");
   const [image, setImage] = useState("");
 
+  const { id } = useParams();
 
-  const navigate = useNavigate()
+  const { eachHouse } = useHouseContext();
+  const { user } = useAuthContext();
+  console.log("HOUSE", eachHouse, id);
+  // console.log("USER",user)
+
+  const navigate = useNavigate();
   //Manejadores de estado
 
   const handlePrice = (e) => {
@@ -46,7 +54,27 @@ function CreateProperty() {
   //Submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/api/admin/house", {
+    if(!id) {
+    axios
+      .post("http://localhost:3001/api/admin/house", {
+        price: price,
+        propertyType: propertyType,
+        rooms: rooms,
+        country: country,
+        location: location,
+        neighborhood: neighborhood,
+        adress: adress,
+        image: image,
+      })
+    
+      .then(() => {
+        alert("Propiedad creada exitosamente");
+        navigate("/");
+      })
+      .catch(() => alert("No se pudo crear la propiedad"));
+    }
+    axios
+    .put(`http://localhost:3001/api/admin/edit/${id}`, {
       price: price,
       propertyType: propertyType,
       rooms: rooms,
@@ -55,11 +83,16 @@ function CreateProperty() {
       neighborhood: neighborhood,
       adress: adress,
       image: image,
-    }).then(() => {
-      alert("Propiedad creada exitosamente")
-      navigate("/")
+    },  {
+      withCredentials: true,
+      credentials: "include",
     })
-    .catch(() => alert("No se pudo crear la propiedad"))
+  
+    .then(() => {
+      alert("Propiedad actualizada exitosamente");
+      navigate("/");
+    })
+    .catch(() => alert("No se pudo actualizar la propiedad"));
   };
 
   return (
@@ -131,8 +164,11 @@ function CreateProperty() {
               value={image}
             />
           </div>
-          <div>
-          <button type="submit">Crear Propiedad</button>
+          <div>{!id ?
+            <button type="submit">Crear Propiedad</button>
+            :
+            user.isAdmin && <button type="submit">Editar Propiedad</button>
+          }
           </div>
         </form>
       </div>

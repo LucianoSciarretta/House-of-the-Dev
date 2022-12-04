@@ -3,13 +3,19 @@ import { useHouseContext } from "../state/houseContext";
 import styles from "../componentsStyles/Details.css";
 import axios from "axios";
 import { useAuthContext } from "../state/userContext";
+import { Link } from "react-router-dom";
 
 function Details() {
   const { eachHouse } = useHouseContext();
+
   const { user } = useAuthContext();
-  // console.log(user)
+
+
+
+
+
+
   const handleFavorites = (eachHouse) => {
-    // console.log("HOUSE", eachHouse);
     
     axios
       .post(
@@ -60,7 +66,7 @@ function Details() {
         <h5>País: {eachHouse.country}</h5>
       </div>
       <div>
-        <h5>Provincia: {eachHouse.location}</h5>
+        <h5>Ciudad: {eachHouse.location}</h5>
       </div>
       <div>
         <h5>Barrio: {eachHouse.neighborhood}</h5>
@@ -76,6 +82,9 @@ function Details() {
       {user.isAdmin && (
         <div className="container-delete">
           <button onClick={handleDelete}>Eliminar Propiedad</button>
+          <Link to={`/EditProperty/${eachHouse.id}`}>
+          <button>Editar Propiedad</button>
+          </Link>
         </div>
       )}
     </div>

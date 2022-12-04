@@ -11,13 +11,15 @@ function AdminControlPanel() {
           <Link to="/create-property">
             <li>Crear Propiedad</li>
           </Link>
-          <Link to="/show-users" >
-          <li>Mostrar Usuarios</li>
+          <Link to="/show-users">
+            <li>Mostrar Usuarios</li>
           </Link>
-          <Link to="delete-user" >
-          <li>Borrar Usuario</li>
+          <Link to="delete-user">
+            <li>Borrar Usuario</li>
           </Link>
-          <li>Promover Administrador</li>
+          <Link to="/">
+            <li>Editar Propiedad</li>
+          </Link>
         </ul>
       </div>
     </div>

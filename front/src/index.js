@@ -8,20 +8,23 @@ import { HouseProvider } from "./state/houseContext";
 import reportWebVitals from "./reportWebVitals";
 import { SearchProvider } from "./state/SearchContext";
 import { FavoritesProvider } from "./state/FavoritesContext";
+import { RoomProvider } from "./state/RoomContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <FavoritesProvider>
-      <SearchProvider>
-        <HouseProvider>
-          <AuthProvider>
-            <App />
-          </AuthProvider>
-        </HouseProvider>
-      </SearchProvider>
-      </FavoritesProvider>
+      <RoomProvider>
+        <FavoritesProvider>
+          <SearchProvider>
+            <HouseProvider>
+              <AuthProvider>
+                <App />
+              </AuthProvider>
+            </HouseProvider>
+          </SearchProvider>
+        </FavoritesProvider>
+      </RoomProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

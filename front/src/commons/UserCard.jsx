@@ -2,31 +2,38 @@ import React from "react";
 import styles from "../componentsStyles/AdminPanel.js/UserCard.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const UserCard = ({ user }) => {
-  // console.log("UserCard", user);
-  const navigate = useNavigate()
+  // const {cardUser, setCardUser} = useCardUserContext()
+
   const handleDeleteUser = () => {
     axios
       .delete(`http://localhost:3001/api/admin/${user.id}`, {
         withCredentials: true,
         credentials: "include",
       })
+      .then(() => window.location.reload(false))
+
       .then(() => alert("Usuario eliminado correctamente"))
       .catch(() => alert("No se pudo eliminar el usuario"));
   };
 
   const handleRol = () => {
     axios
-      .put(`http://localhost:3001/api/admin/${user.id}`, {},  {
-        withCredentials: true,
-        credentials: "include",
-      })
+      .put(
+        `http://localhost:3001/api/admin/${user.id}`,
+        {},
+        {
+          withCredentials: true,
+          credentials: "include",
+        }
+      )
       .then(() => {
-        alert("El usuario ahora tiene permisos de administrador ")
-        navigate("/show-users")
+        window.location.reload(false);
       })
-      .catch(() => alert("No se pudo cambiar el rol del usuario"))
+      .then(() => alert("El usuario ahora tiene permisos de administrador "))
+      .catch(() => alert("No se pudo cambiar el rol del usuario"));
   };
 
   return (

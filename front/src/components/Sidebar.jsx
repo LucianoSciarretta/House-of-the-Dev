@@ -4,13 +4,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../componentsStyles/Sidebar.css";
 import { useSearchContext } from "../state/SearchContext";
+import SearchPanel from "./SearchPanel/SearchPanel";
+import SearchByPrice from "./SearchPanel/SearchPanel";
 
 function Sidebar() {
   const [search, setSearch] = useState("");
-  const navigate = useNavigate()
-  const {searchProperties, setSearchProperties} = useSearchContext()
-
-
+  const navigate = useNavigate();
+  const { searchProperties, setSearchProperties } = useSearchContext();
 
   // console.log("PROPERTIES", searchProperties)
 
@@ -22,9 +22,9 @@ function Sidebar() {
         credentials: "include",
       })
       .then((res) => {
-        console.log("BARRA DE BÚSQUEDA", res.data)
-        setSearchProperties(res.data)
-        navigate("/Search-Component")
+        console.log("BARRA DE BÚSQUEDA", res.data);
+        setSearchProperties(res.data);
+        navigate("/Search-Component");
       })
       .catch((error) => console.log("No se pudo encontrar propiedades"));
   };
@@ -45,8 +45,8 @@ function Sidebar() {
               onChange={handleProperties}
               value={search}
             />
-
           </form>
+           <SearchPanel />
         </div>
       </div>
     </div>

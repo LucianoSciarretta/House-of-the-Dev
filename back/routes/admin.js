@@ -4,7 +4,7 @@ const { validateToken } = require("../config/token");
 const validateRolAdmin = require("../middlewares/validateRolAdmin");
 const { User, Property } = require("../models");
 
-//Ruta para mostrar todos los usuarios registrados 
+//Ruta para mostrar todos los usuarios registrados
 router.get("/", (req, res) => {
   const token = req.cookies.token;
   console.log("TOKEN:::", token);
@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 
 //Ruta para borrar un usuario
 router.delete("/:id", (req, res) => {
-  const id = req.params.id
+  const id = req.params.id;
   const token = req.cookies.token;
 
   if (!token) return res.status(401).send("Ocurrió un problema");
@@ -42,7 +42,7 @@ router.delete("/:id", (req, res) => {
 //Ruta para promover administradores
 router.put("/:id", (req, res) => {
   const token = req.cookies.token;
-  const id  = req.params.id;
+  const id = req.params.id;
   console.log(id);
 
   if (!token) return res.sendStatus(401);
@@ -71,15 +71,28 @@ router.delete("/house/:id", (req, res) => {
   const token = req.cookies.token;
   const id = req.params.id;
   Property.destroy({ where: { id } })
-    .then(() =>
-      res.status(200).send("Propiedad eliminada correctamente")
-    )
+    .then(() => res.status(200).send("Propiedad eliminada correctamente"))
     .catch((error) =>
       res.send({ message: "No se puedo eliminar la propiedad", data: error })
     );
 });
 
-
 // Ruta para editar una casa
+
+router.put("/edit/:id", (req, res) => {
+  const token = req.cookies.token;
+  const  id  = req.params.id;
+  console.log("ID:::", id);
+  const newHouse = req.body
+  if (!token) return res.sendStatus(401);
+  if (!validateRolAdmin(token)) {
+    return res.status(403).send("No tiene los permisos necesarios");
+  }
+
+  Property.update(newHouse, { where: { id } }).then(() =>
+    res.status(200).send("Propiedad modificada correctamente")
+  )
+  .catch(() => console.log("No se pudo modificar la propiedad"))
+});
 
 module.exports = router;
