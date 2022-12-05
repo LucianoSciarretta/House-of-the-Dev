@@ -1,0 +1,23 @@
+.favorite-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 550px);
+  gap: 40px;
+  justify-content: center;
+  margin-top: 3em;
+  
+
+}
+
+.favorite-container {
+  width: 100%;
+  margin-bottom: 50px;
+  padding:70px;
+}
+
+.favoritos-div {
+  margin: 30px;
+}
+
+h2 {
+  text-align: center;
+}

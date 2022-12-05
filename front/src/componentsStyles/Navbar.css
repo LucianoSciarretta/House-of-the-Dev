@@ -1,0 +1,27 @@
+.navbar {
+    background-color: rgba(209, 105, 53, 0.568);
+    padding: 50px  0;
+    color:white;
+    
+}
+
+.logout-button {
+    margin: 0 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+
+.login-button {
+    margin: 0 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+button {
+    margin: 0 10px;
+}
