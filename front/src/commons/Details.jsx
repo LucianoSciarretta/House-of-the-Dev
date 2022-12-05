@@ -10,13 +10,7 @@ function Details() {
 
   const { user } = useAuthContext();
 
-
-
-
-
-
   const handleFavorites = (eachHouse) => {
-    
     axios
       .post(
         "http://localhost:3001/api/users/favorites",
@@ -83,8 +77,9 @@ function Details() {
         <div className="container-delete">
           <button onClick={handleDelete}>Eliminar Propiedad</button>
           <Link to={`/EditProperty/${eachHouse.id}`}>
-          <button>Editar Propiedad</button>
+            <button>Editar Propiedad</button>
           </Link>
+          <Link to={"/MailForm"}>Reservar cita</Link>
         </div>
       )}
     </div>

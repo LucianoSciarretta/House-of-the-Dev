@@ -9,7 +9,7 @@ function SearchPanel() {
   const navigate = useNavigate();
   const {setRooms} = useRoomContext();
 
-  //Preguntar por la burrada del parámetro de useState. Puse string para que no me pise el placeHolder del input
+  //Preguntar por la burrada del parámetro del useState. Puse string para que no me pise el placeHolder del input
   const [roomNumber, setRoomNumber]  = useState("")
 
 

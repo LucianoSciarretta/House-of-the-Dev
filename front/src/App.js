@@ -15,6 +15,7 @@ import MoreValue from "./components/MoreValue/MoreValue.jsx"
 import styles from "./index.css";
 import LessValue from "./components/LessValue/LessValue";
 import Rooms from "./components/rooms/Rooms";
+import MailForm from "./components/MailForm/MailForm";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/moreValue" element={<MoreValue />} />
           <Route path="/lessValue" element={<LessValue />} />
           <Route path="/rooms" element={<Rooms />} />
+          <Route path="/MailForm"  element={<MailForm />}  />
         </Routes>
       </div>
     </div>
