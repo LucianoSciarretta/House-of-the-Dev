@@ -1,0 +1,22 @@
+.createProperty-container {
+  text-align: center;
+  color: white;
+  /* margin-top: 200px; */
+  background-color: rgb(178, 170, 165);
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.createProperty-container button {
+    color: white;
+  border-radius: 10px;
+  background-color: rgb(127, 36, 9);
+}
+
+.container-createProperty {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  margin-top: 250px;
+}

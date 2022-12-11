@@ -17,3 +17,6 @@
 
 
   Para levantar el proyecto  ejecutar el comando npm start en la carpeta front y en la carpeta back.
+  
+
+  En este proyecto se muestran las diferentes interacciones en una página  a las cuales tienen acceso usuarios públicos, registrados y administradores. Las  herramientas  de interacción  que se muestran en la página son específicas para cada tipo de usuario.

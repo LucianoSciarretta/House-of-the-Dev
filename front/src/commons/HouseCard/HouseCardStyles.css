@@ -1,0 +1,21 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+.HouseCard-Container {
+  width: 100%;
+  margin: 2%;
+  font-size: 2em;
+  /* background-color: rgb(227, 224, 224); */
+}
+
+/* .image-container {
+} */
+
+.image-container button {
+  color: white;
+  border-radius: 10px;
+  background-color:  #333;
+}
+

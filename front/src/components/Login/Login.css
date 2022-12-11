@@ -1,0 +1,24 @@
+.login {
+    padding:10px;
+    color:white;
+    width :30%;
+    margin: 15% auto;
+    border-radius: 15px;
+    background-color: rgb(178, 165, 165);    
+}
+
+input {
+    margin:5px;
+    border-radius: 8px;
+    width: 90%;
+}
+
+
+.container-div{
+    width:100%;
+}
+
+
+/* .div {
+    margin-top: 80%;
+} */

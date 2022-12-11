@@ -1,0 +1,21 @@
+.sideBar-container {
+  color: #333;
+  margin-top: 12em;
+  position: fixed;
+  background-color: rgb(227, 224, 224);
+  width: 12%;
+  height: 100%;
+  padding: 15px;
+  font-size: 1em;
+}
+/* 
+.sideBar-container {
+  background-color: blueviolet;
+  width: 20%;
+} */
+
+.sideBar h3 {
+  margin-top: 20%;
+  font-size: 1.5em;
+  font-style: oblique;
+}

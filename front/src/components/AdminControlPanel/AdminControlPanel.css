@@ -1,0 +1,38 @@
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container ul {
+  border-radius: 7px;
+  background-color:  #333;
+  position: absolute;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.dropdown-container h3:hover {
+  background-color: rgba(222, 21, 21, 0.601);
+  width:max-content;
+  height: max-content;
+}
+
+.dropdown-container:hover ul {
+  color: white;
+  max-height: 500px;
+  width: auto;
+}
+
+li {
+  padding: 5px;
+  margin: 20px;
+  color: white;
+  list-style: none;
+  text-decoration: none
+}
+
+/* .dropdown-container :hover {
+  background-color: rgba(222, 21, 21, 0.601);
+  width: auto;
+  height: auto;
+} */
