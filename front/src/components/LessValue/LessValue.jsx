@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import HouseCard from "../../commons/HouseCard";
+import HouseCard from "../../commons/HouseCard/HouseCard";
 
 function LessValue() {
   const [properties, setProperties] = useState([]);

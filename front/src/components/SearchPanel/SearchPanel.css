@@ -6,7 +6,7 @@
   
   .dropdown-container-filters ul {
       border-radius: 7px;
-      background-color:  rgb(161, 103, 80);
+      background-color:  #333;
       position:absolute;
       max-height: 0px;
       overflow: hidden;
@@ -19,11 +19,13 @@
   }
   
   li {
-      
+      list-style: none;
       padding: 5px;
-      margin: 20px;
+      margin: 30px;
+      text-decoration: none
   }
 
   input {
     margin-bottom: 30px;
   }
+

@@ -1,0 +1,89 @@
+.navbar-container {
+  width: 100%;
+  display: block;
+
+}
+
+.navbar {
+  text-align: center;
+  width: 100%;
+  padding: 50px 0;
+  color: white;
+
+  background-color: #333;
+  position: fixed;
+  height: 17%;
+  width: 100%;
+}
+
+ .logout-button {
+  /* margin: 0 2em; */
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  /* align-items: flex-end; */
+} 
+
+.login-button {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+button {
+  
+  margin: 0 10px;
+}
+
+.button-container {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.button-container h3 {
+  margin: 0 2em;
+  color:white;
+  height: 2em;;
+  
+}
+
+.button-hover :hover{
+  background-color: rgba(222, 21, 21, 0.601);
+  width:max-content;
+  height: max-content;
+  text-align:center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.container-title h1 {
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  font-size: 3em;
+  font-style: oblique;
+}
+
+.admin-logout {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: flex-end;
+}
+
+/* .register.favorites-paginaPrincipal {
+  display: flex;
+  flex-direction: row;
+} */
+
+.register-favorites-paginaPrincipal {
+   width: 60%;
+   display: flex;
+   flex-direction: row;
+   margin-left:0%;
+}

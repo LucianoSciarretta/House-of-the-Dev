@@ -1,0 +1,22 @@
+.details-container {
+    padding:70px;
+    background-color: rgb(178, 170, 165);
+    color:white;
+    width :40%;
+    margin: 17% auto;
+    height: auto;
+    border-radius: 15px;
+    font-size: 2em;
+    margin-top: 20%;
+}
+
+.container-favorites {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    
+}
+
+
+
+
