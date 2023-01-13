@@ -70,6 +70,4 @@ router.get("/rooms/:roomNumber", (req, res) => {
 
 module.exports = router;
 
-// get('/', (req, res )=>{
-//   Property.findOne({where: {[Op.or]:[{categoria: req.body.categroria}, {ubicacion: req.body.ubicacion}, {pais: req.body.pais}]}})
-//   })
+

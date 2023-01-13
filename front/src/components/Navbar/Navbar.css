@@ -1,89 +1,54 @@
-.navbar-container {
-  width: 100%;
-  display: block;
-
-}
-
 .navbar {
   text-align: center;
-  width: 100%;
   padding: 50px 0;
   color: white;
-
   background-color: #333;
   position: fixed;
-  height: 17%;
+  top: 0;
+  height: 20vh;
   width: 100%;
 }
 
- .logout-button {
-  /* margin: 0 2em; */
+.logout-button {
   display: flex;
   flex-direction: row;
   justify-content: end;
-  /* align-items: flex-end; */
-} 
-
-.login-button {
-  margin: 0 2em;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: flex-end;
-}
-
-button {
-  
-  margin: 0 10px;
 }
 
 .button-container {
+  width: 90%;
   margin-top: 2%;
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: right;
 }
 
 .button-container h3 {
-  margin: 0 2em;
-  color:white;
-  height: 2em;;
-  
+  margin: 0 1.5em;
+  color: white;
+  height: 1.5em;
 }
 
-.button-hover :hover{
-  background-color: rgba(222, 21, 21, 0.601);
-  width:max-content;
-  height: max-content;
-  text-align:center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+.button-hover{
+  width: 120px;
+}
+
+.button-hover :hover {
+  background-color: #d62631;
+  max-width: max-content;
+  border-radius: 7px;
 }
 
 .container-title h1 {
-  display: flex; 
+  display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   font-size: 3em;
+  margin-left: 5em;
   font-style: oblique;
 }
 
-.admin-logout {
-  display: flex;
-  flex-direction: row;
-  width: 40%;
-  justify-content: flex-end;
-}
-
-/* .register.favorites-paginaPrincipal {
-  display: flex;
-  flex-direction: row;
-} */
-
-.register-favorites-paginaPrincipal {
-   width: 60%;
-   display: flex;
-   flex-direction: row;
-   margin-left:0%;
+.link {
+  color: aliceblue;
+  text-decoration: none;
 }

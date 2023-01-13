@@ -16,13 +16,13 @@ import MoreValue from "./components/MoreValue/MoreValue.jsx";
 import LessValue from "./components/LessValue/LessValue";
 import Rooms from "./components/rooms/Rooms";
 import MailForm from "./components/MailForm/MailForm";
-import styles from "./index.css"
+import styles from "./index.css";
 function App() {
   return (
     <div className="App">
-    
-        <Navbar />
-      
+      <div className="navbar-block">
+      <Navbar />
+      </div>
       <div className="container-app">
         <Sidebar />
         <Routes>

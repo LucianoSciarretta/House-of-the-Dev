@@ -6,6 +6,8 @@
 
 
 .container-app {
+  background-color:  #fff;
   display: flex;
   flex-direction: row;
 }
+

@@ -1,13 +1,11 @@
-.gridColumns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .grid-container {
-    /* margin-top: 5%; */
-    width: 100% ;
-    margin:50px;
-    margin-top: 10%;
-    margin-left: 5%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  grid-template-rows: auto;
+  gap: 22px;
+  margin-top: 12%;
 }
+

@@ -8,16 +8,16 @@ function AdminControlPanel() {
       <div className="dropdown-container">
         <h3>Panel de Administrador</h3>
         <ul>
-          <Link to="/create-property">
+          <Link className="link"  to="/create-property">
             <li>Crear Propiedad</li>
           </Link>
-          <Link to="/show-users">
+          <Link className="link"  to="/show-users">
             <li>Mostrar Usuarios</li>
           </Link>
-          <Link to="delete-user">
+          <Link className="link"  to="delete-user">
             <li>Borrar Usuario</li>
           </Link>
-          <Link to="/">
+          <Link className="link"  to="/">
             <li>Editar Propiedad</li>
           </Link>
         </ul>

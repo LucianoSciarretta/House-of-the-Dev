@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Details() {
   const { eachHouse } = useHouseContext();
   const { user } = useAuthContext();
-
+ 
   const handleFavorites = (eachHouse) => {
     axios
       .post(

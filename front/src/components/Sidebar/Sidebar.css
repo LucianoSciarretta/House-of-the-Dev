@@ -1,12 +1,12 @@
 .sideBar-container {
   color: #333;
-  margin-top: 12em;
-  position: fixed;
   background-color: rgb(227, 224, 224);
-  width: 12%;
-  height: 100%;
+  width: 15%;
+  max-height: 100%;
   padding: 15px;
   font-size: 1em;
+ 
+  margin-top: 20vh;
 }
 /* 
 .sideBar-container {

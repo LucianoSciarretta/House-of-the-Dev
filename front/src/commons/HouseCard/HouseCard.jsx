@@ -9,7 +9,6 @@ const HouseCard = ({ house }) => {
   const {user} = useAuthContext()
   const { eachHouse, setEachHouse } = useHouseContext();
   return (
-    <div className="HouseCard-Container">
       <div className="image-container">
         <img
           src={house.image}
@@ -29,7 +28,6 @@ const HouseCard = ({ house }) => {
         </div>
         
       </div>
-    </div>
   );
 };
 

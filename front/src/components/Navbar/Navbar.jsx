@@ -70,57 +70,51 @@ function Navbar() {
     <div>
       <div className="navbar">
         <div className="container-title">
-          <h1>House of the Dev</h1>
+          <Link className="link" to="/">
+            <h1>HOD</h1>
+          </Link>
         </div>
         <div className="button-container">
-          <div className="register-favorites-paginaPrincipal">
-            {!user.email && (
-              <Link to="/register">
-                <div className="button-hover">
-                  <h3>Registro</h3>
-                </div>
-              </Link>
-            )}
-            {user.email && (
+          {!user.email && (
+            <Link className="link" to="/register">
               <div className="button-hover">
-                <h3  onClick={handleFavorites}>
-                  Favoritos
-                </h3>
-              </div>
-            )}
-            <Link to="/">
-              <div className="button-hover">
-                <h3>Página principal</h3>
+                <h3>Registro</h3>
               </div>
             </Link>
-          </div>
-          <div className="admin-logout">
-            {!user.email ? (
-              <>
-                <div className="login-button">
-                  <Link to="/login">
-                    <div className="button-hover">
-                      <h3>Iniciar sesión</h3>
-                    </div>
-                  </Link>
+          )}
+          {user.email && (
+            <div className="button-hover">
+              <h3 onClick={handleFavorites}>Favoritos</h3>
+            </div>
+          )}
+          <Link className="link" to="/">
+            <div className="button-hover">
+              <h3>Página principal</h3>
+            </div>
+          </Link>
+          {!user.email ? (
+            <>
+              <Link className="link" to="/login">
+                <div className="button-hover">
+                  <h3>Iniciar sesión</h3>
                 </div>
-              </>
-            ) : (
-              <div className="logout-button">
-                <h3>{user.name}</h3>
-                <Link to="/login">
-                  <div className="button-hover">
-                    <h3 onClick={handleLogout}>Cerrar sesión</h3>
-                  </div>
-                </Link>
-                {user.isAdmin && (
-                  <div>
-                    <AdminControlPanel />
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
+              </Link>
+            </>
+          ) : (
+            <div className="logout-button">
+              <h3>{user.name}</h3>
+              <Link className="link" to="/login">
+                <div className="button-hover">
+                  <h3 onClick={handleLogout}>Cerrar sesión</h3>
+                </div>
+              </Link>
+              {user.isAdmin && (
+                <div>
+                  <AdminControlPanel />
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

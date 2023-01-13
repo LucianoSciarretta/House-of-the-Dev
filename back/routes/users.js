@@ -7,14 +7,7 @@ router.post("/favorites", (req, res) => {
   const { email, property } = req.body;
   Property.findOne({
     where: { id: property.id },
-    // price: property.price,
-    // propertyType: property.propertyType,
-    // rooms: property.rooms,
-    // country: property.country,
-    // location: property.location,
-    // neighborhood: property.neighborhood,
-    // adress: property.adress,
-    // image: property.image,
+
   }).then((property) => {
     User.findOne({ where: { email: email } })
       .then((user) => {

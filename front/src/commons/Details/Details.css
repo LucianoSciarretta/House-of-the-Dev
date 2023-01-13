@@ -1,13 +1,13 @@
 .details-container {
-    padding:70px;
+    padding:60px;
     background-color: rgb(178, 170, 165);
     color:white;
-    width :40%;
-    margin: 17% auto;
-    height: auto;
+    width :60%;
+    margin: 5% auto;
+    height: 22%;
     border-radius: 15px;
-    font-size: 2em;
-    margin-top: 20%;
+    font-size: 1.2em;
+    margin-top: 11%;
 }
 
 .container-favorites {

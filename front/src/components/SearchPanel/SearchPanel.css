@@ -1,8 +1,8 @@
-.dropdown-container-filters {
+/* .dropdown-container-filters {
     position: relative;
    
   
-  }
+  } */
   
   .dropdown-container-filters ul {
       border-radius: 7px;
@@ -21,11 +21,15 @@
   li {
       list-style: none;
       padding: 5px;
-      margin: 30px;
+      margin: 40px;
       text-decoration: none
   }
 
   input {
     margin-bottom: 30px;
+  }
+
+  .link {
+    text-decoration: none;
   }
 

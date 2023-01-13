@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import HouseCard from "../../commons/HouseCard/HouseCard";
-import styles from "./Grid.css"
+import styles from "./Grid.css";
 import fakeData from "../../utils/fakeData";
 
 const Grid = () => {
@@ -22,36 +22,15 @@ const Grid = () => {
   }, []);
 
   return (
-    // width: 100%q
-    <div className="grid-container">
-      <div  className="grid-container">
-        <ul className="gridColumns">
-          {properties.map((house, i) => (
-            
-            <HouseCard key={i} house={house} />
-          ))}
-        </ul>
-      </div>
-    </div>
+   
+      <ul className="grid-container">
+        {properties.map((house, i) => (
+          <HouseCard key={i} house={house} />
+        ))}
+      </ul>
   );
 };
 
 export default Grid;
 
-// const  Grid = () =>  {
 
-//   const [houses, setHouses] = useState([])
-
-//   return (
-//     // width: 100%q
-//     <div className="grid-container">
-//       <div>
-//         <ul className="gridColumns">
-//           {fakeData.map((house, i) => (
-//             <HouseCard key={i} house={house} />
-//           ))}
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// }

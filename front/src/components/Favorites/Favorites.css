@@ -1,25 +1,13 @@
-.favorite-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 550px);
-  gap: 40px;
-  justify-content: center;
-  margin-top: 3em;
-  
-
-}
 
 .favorite-container {
-  background-color:rgb(227, 224, 224);
   width: 100%;
-  margin-top: 17%;
-  margin-bottom: 50px;
-  padding:70px;
-  margin-left: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  grid-template-rows: auto;
+  gap: 22px;
+  margin-top: 12%;
 }
 
-.favoritos-div {
-  margin: 30px;
-}
 
 h2 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

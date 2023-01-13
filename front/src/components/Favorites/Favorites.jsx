@@ -10,20 +10,11 @@ const Favorites = () => {
   const { favoritesProperties } = useFavoritesContext();
 
   return (
-    <div>
-      <div className="favorite-container">
-        <div>
-          <div className="favoritos-div">
-          </div>
-           <h2>Favoritos</h2>
-          <ul className="favorite-columns">
-            {favoritesProperties.map((house, i) => (
-              <HouseCard house={house} key={i} />
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+      <ul className="favorite-container">
+        {favoritesProperties.map((house, i) => (
+          <HouseCard house={house} key={i} />
+        ))}
+      </ul>
   );
 };
 

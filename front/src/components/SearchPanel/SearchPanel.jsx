@@ -48,10 +48,10 @@ function SearchPanel() {
         <div className="dropdown-container-filters">
           <h3>Filtros</h3>
           <ul>
-            <Link to="/moreValue">
+            <Link  className="link"  to="/moreValue">
               <li>Mayor a Menor Precio</li>
             </Link>
-            <Link to="/lessValue">
+            <Link  className="link"  to="/lessValue">
               <li>Menor a Mayor Precio</li>
             </Link>
             <form onSubmit={handleSubmit}>

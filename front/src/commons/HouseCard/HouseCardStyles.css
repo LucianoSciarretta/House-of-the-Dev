@@ -1,21 +1,25 @@
+
 img {
-  width: 100%;
-  height: auto;
+  width: 100% ;
+  height: 400px;
+
 }
 
-.HouseCard-Container {
-  width: 100%;
-  margin: 2%;
-  font-size: 2em;
-  /* background-color: rgb(227, 224, 224); */
+.image-container {
+  width:100%;
+  height: fit-content;
+  padding: 4%;
+  background-color:#EDEDED;
+  
 }
 
-/* .image-container {
-} */
 
 .image-container button {
   color: white;
   border-radius: 10px;
-  background-color:  #333;
+  background-color: #333;
 }
 
+.image-container button:hover {
+background-color: #D62631;
+}
